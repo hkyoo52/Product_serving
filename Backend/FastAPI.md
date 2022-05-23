@@ -71,18 +71,49 @@
 
 
 ## IP
+- 네트워크에 연결된 특정 PC의 주소를 나타내는 체계
+- Internet Protocol의 줄임말, 인터넷상에서 사용하는 주소체계
+- 4덩이의 숫자로 구성된 IP 주소 체계를IPv4라고 함
+- 각 덩어리마다 0~255로 나타낼 수 있음. 2^32 = 43억개의 IP 주소를 표현할 수 있음
+- 몇가지는 용도가 정해짐
+- localhost, 127.0.0.1 : 현재 사용 중인 Local PC
+- 0.0.0.0, 255.255.255.255 : broadcast address, 로컬 네트워크에 접속된 모든 장치와 소통하는 주소
+- 개인 PC 보급으로 누구나 PC를 사용해 IPv4로 할당할 수 있는 한계점 진입, IPv6이 나옴
+
 
 ## Port
-
+- IP 주소 뒤에 나오는 숫자
+- PC에 접속할 수 있는 통로(채널)
+- 사용 중인 포트는 중복할 수 없음
+- Jupyter Notebook은 8888
+- Port는 0 ~ 65535까지 존재
+- 그 중 0~1024는 통신을 위한 규약에 정해짐
+- 22 : SSH
+- 80 : HTTP
+- 443 : HTTPS
 
 
 # FastAPI
 
 ## FastAPI 소개 & 특징
+* 간결한 문법
+* Flask 비슷한 구조
+* 성능도 좋음
+
 
 ## FastAPI vs Flask
+* 간결한 문법, 비동기 지원
+* 부족한 라이브러리
+
+
 
 ## Poetry
+- Dependency Resolver로 복잡한 의존성들의 버전 충돌을 방지
+- Virtualenv를 생성해서 격리된 환경에서 빠르게 개발이 가능해짐
+- 기존 파이썬 패키지 관리 도구에서 지원하지 않는 Build, Publish가 가능
+- pyproject.toml을 기준으로 여러 툴들의 config를 명시적으로 관리
+- 새로 만든 프로젝트라면 poetry를 사용해보고, virtualenv 등과 비교하는 것을 추천
+
 
 ## Swagger
 
