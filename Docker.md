@@ -70,11 +70,19 @@ RUN pip install pip==21.2.4 %% \      # 여러개 명령할 경우 && 사용
 CMD ["python","main.py"]        # CMD ["실행할 명령어","인자",,,] 
 ```
 
+* EXPOSE : 컨테이너 외부에 노출할 포트 지정
+* ENTRYPOINT : 이미지 컨테이너로 띄울 때 항상 실행하는 커맨드
 
 
 
-
-
+# DOCKER 이미지 PUSH
+## GCR에 푸쉬
+* gcloud 설치
+```python
+gcloud auth login
+gcloud config set project <내 project id>
+gcloud auth configure-docker
+docker tag "기존 이미지:태그" "새 이미지 이름:태그"
+docker push "이미지 이름:태그"
 
 ```
-
