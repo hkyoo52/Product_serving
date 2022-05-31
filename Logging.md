@@ -21,15 +21,61 @@
 * Data Warehouse 저장 : 데이터 분석시 활용하는 곳임
   - 여러 공간에 저장된 데이터 한곳으로 저장
 
-
-## 저장된 데이터 활용 방식
 # Logging in Python
 ## Python Logging Module
+#### Log level
+![image](https://user-images.githubusercontent.com/63588046/171140418-bc2b5087-7ae3-4b58-8a1e-decfbe2a9fa2.png)
+
+#### print vs logging
+* print문은 console에서만 출력
+* logging은 파이썬이 다룰 수 있는 모든 포맷에 output 출력
+* logging은 반드시 config 설정해야함
+
+```python
+import logging.config
+
+# config 설정
+logger_config = {
+        'version':1,
+        'disable_existing_loggers':True,
+        'formatters':{
+            'simple': {'format':'% ~ ~ '},
+         'handlers': {~ ~ ~},                # 여기까지 기본 config
+         
+         'loggers':{'example':{                  # logger 이름
+                        'level':'INFO",          # logger level
+                        'handlers':['console']   
+                   }
+            }
+}
+         
+                
+
+logger = logging.getLogger("example")
+logger.info('hello world')
+
+```
+
 ## Logger
+- 로그를 생성하는 Method 제공(logger.info() 등)
+- 로그 Level과 Logger에 적용된 Filter를 기반으로 처리해야 하는 로그인지 판단
+- Handler에게 LogRecord 인스턴스 전달
+
 ## Handler
+- Logger에서 만들어진 Log를 적절한 위치로 전송(파일 저장 또는 Console 출력 등)
+- Level과 Formatter를 각각 설정해서 필터링 할 수 있음
+- StreamHandler, FileHandler, HTTPHandler 등
+
 ## Formatter
+- 최종적으로 Log에 출력될 Formatting 설정
+- 시간, Logger 이름, 심각도, Output, 함수 이름, Line 정보, 메시지 등 다양한 정보 제공
+
 ## Logging Flow
+![image](https://user-images.githubusercontent.com/63588046/171143781-b0279077-9956-4335-a950-07c24895b583.png)
+
+
 # Online Serving Logging(BigQuery)
+
 ## BigQuery 데이터 구조
 ## BigQuery 데이터세트 만들기
 ## BigQuery 테이블 만들기
