@@ -75,8 +75,15 @@ logger.info('hello world')
 
 
 # Online Serving Logging(BigQuery)
-
+* Google Cloud Platform의 데이터 웨어하우스
+* 대이터 분석을 위해 사용
+* Firebase, google Analytics 4 와 연동
 ## BigQuery 데이터 구조
+* Dataset, Table, View 등으로 구성
+
 ## BigQuery 데이터세트 만들기
 ## BigQuery 테이블 만들기
+* create table 클릭
+* 파티션 설정 : 일부 데이터만 조회해서 비용 줄임  
 ## BigQuery로 실시간 로그 데이터 수집하기
+
